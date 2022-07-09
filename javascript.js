@@ -13,6 +13,7 @@
 
 console.log("hello world");
 let userInput = prompt("rock, paper, scissor");
+//user input will need to be not case sensitive
 
 function computerPlay() {
   let optionOne = "rock";
@@ -56,9 +57,11 @@ function game() {
   let loss = 0;
   let draw = 0;
 
+  let userLowerCaseName = userInput.toLowerCase();
+
   for (let i = 0; i < 3; i++) {
-    console.log(playRound(userInput, computerPlay()));
-    const result = playRound(userInput, computerPlay());
+    console.log(playRound(userLowerCaseName, computerPlay()));
+    const result = playRound(userLowerCaseName, computerPlay());
 
     if (result === "You have won!") {
       win++;
